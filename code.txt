@@ -1,0 +1,55 @@
+import random
+counter = int()
+counter2 = int()
+counter3 = int()
+
+Randomer = float()
+#---------------------------------#
+FadedMapCount = int(100)
+HigtSeasMap = int(0)
+Cuilas = int(0)
+GrappingHook = int(0)
+#---------------------------------#
+while ( FadedMapCount != 0 ) and ( HigtSeasMap < 4 ) and (Cuilas < 4):
+    FadedMapCount = FadedMapCount-1
+    counter = counter+1
+    Randomer = random.uniform(0, 1)
+#-------шанс 10 % ----------------------№
+    if Randomer <= 0.1:
+        HigtSeasMap= HigtSeasMap+1
+        print('!!! выпала фиолетовая карта пока искали саблю!!!')
+#-------шанс 35 % ----------------------№
+    elif Randomer <= 0.35:
+        Cuilas=Cuilas+1
+        print('!! выпала сабля !!')
+print('   \n'' найдено',HigtSeasMap,'фиолетовых карт\n','найдено',Cuilas,'сабли\n','Потрачено',counter, 'серых карт\n')
+#---------------------------------#
+while ( FadedMapCount != 0 ) and ( HigtSeasMap < 4 ) and (GrappingHook < 4):
+    counter2 = counter2+1
+    FadedMapCount = FadedMapCount-1
+    Randomer = random.uniform(0, 1)
+#-------шанс 10 % ----------------------№
+    if Randomer <= 0.1:
+        HigtSeasMap= HigtSeasMap+1
+        print('!!! выпала фиолетовая карта пока искали крюк!!!')
+#-------шанс 35 % ----------------------№
+    elif Randomer <= 0.35:
+        GrappingHook=GrappingHook+1
+        print('!! выпал крюк !!')
+print('   \n'' найдено',HigtSeasMap,'фиолетовых карт\n','найдено',GrappingHook,'крюка\n','Потрачено ВСЕГО',counter+counter2, 'серых карт\n')
+
+while ( FadedMapCount != 0 ) and ( HigtSeasMap < 4 ) and ( GrappingHook !=0 ):
+    FadedMapCount = FadedMapCount-1
+    GrappingHook = GrappingHook-1
+    counter3 = counter3+2
+    Randomer = random.uniform(0, 1)
+#-------шанс 40 % ----------------------№
+    if Randomer <= 0.4:
+        HigtSeasMap= HigtSeasMap+1
+        print('!!! выпала фиолетовая карта !!!')
+
+print('   \n'' найдено',HigtSeasMap,'фиолетовых карт\n','Потрачено ВСЕГО',counter+counter2+counter3, 'серых карт\n')
+
+print('   \n''~ потрачено',(counter*14)+(counter2*20)+(counter3*20),'энергии на квесты\n','~ потрачено дней',(counter+counter2+counter3)*0.8, 'ИРЛ\n')
+
+
